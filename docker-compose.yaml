@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+
+  web-smk:
+    build: .
+    container_name: oprek_web_kuli
+    hostname: webkuli
+    restart: unless-stopped
+    ports: 
+      - 80:80
+    networks: 
+      - oprek_net
+    volumes: 
+      - ${PWD}:/usr/share/nginx/html
+
+networks:
+  oprek_net:
